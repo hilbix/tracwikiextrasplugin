@@ -35,7 +35,7 @@ except NameError:
     unicode = str
 
 def prepare_regexp(d):
-    syms = sorted(d.keys(), key=lambda a: len(a))
+    syms = sorted(d.keys(), key=lambda a: len(a), reverse=True)
     return "|".join([r'%s%s%s'
                      % (r'\b' if re.match(r'\w', s[0]) else '',
                         re.escape(s),
